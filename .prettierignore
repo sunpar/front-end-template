@@ -1,0 +1,8 @@
+dist
+package-lock.json
+.github
+.vagrant
+node_modules
+devops
+CHANGELOG.node_modules
+repository_metadata.yaml

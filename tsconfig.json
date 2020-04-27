@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "strict": true
+  },
+  "include": [
+    "src/**/*",
+    "custom.d.ts",
+    "typings.d.ts",
+    "untyped-modules.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,127 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb",
+      "airbnb/hooks",
+      "prettier",
+      "plugin:jsx-a11y/recommended",
+      "plugin:cypress/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    // "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": { "jsx": true },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    // "parserOptions": {
+    //   "ecmaFeatures": {
+    //     "jsx": true,
+    //     "tsx": true
+    //   },
+    //   "ecmaVersion": 2018,
+    //   "sourceType": "module"
+    // },
+    "plugins": ["react", "prettier", "jsx-a11y", "cypress"],
+    "settings": { "react": { "version": "detect" } },
+    "rules": {
+      "react/self-closing-comp": "off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".jsx"]
+        }
+      ],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "tsx": "never",
+          "ts": "never"
+        }
+      ],
+      "spaced-comment": [
+        "error",
+        "always",
+        {
+          "line": {
+            "markers": ["/"]
+          }
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts", "**/*.tsx"],
+        "env": { "browser": true, "es6": true, "node": true },
+        "extends": [
+          "plugin:@typescript-eslint/recommended",
+          "plugin:react/recommended",
+          "airbnb",
+          "airbnb/hooks",
+          "prettier",
+          "plugin:jsx-a11y/recommended"
+        ],
+        "globals": { "Atomics": "readonly", "SharedArrayBuffer": "readonly" },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaFeatures": { "jsx": true, "tsx": true },
+          "ecmaVersion": 2018,
+          "sourceType": "module",
+          "project": "./tsconfig.json"
+        },
+        "plugins": [
+          "import",
+          "react",
+          "@typescript-eslint",
+          "prettier",
+          "jsx-a11y"
+        ],
+        "rules": {
+          "react/jsx-closing-tag-location": "off",
+          "react/self-closing-comp": "off",
+          "react/jsx-filename-extension": [
+            1,
+            {
+              "extensions": [".tsx"]
+            }
+          ],
+          "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "ts": "never",
+              "tsx": "never"
+            }
+          ],
+          "import/prefer-default-export": "off"
+        },
+        "settings": {
+          "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+          },
+          "import/resolver": {
+            // use <root>/tsconfig.json
+            "typescript": {
+              // always try to resolve types under `<root/>@types` directory even it doesn't contain any source code, like `@types/unist`
+              "alwaysTryTypes": true
+            }
+          },
+          "react": { "version": "detect" }
+        }
+      }
+    ]
+  }
